@@ -76,6 +76,20 @@
 - Joining gameservers using the matchmaker - check out the GameServer section in config.ini for more details
 ##### * Included in the [LawinServer Addon](https://github.com/PRO100KatYT/LawinServerAddon). To install it, merge its `public` folder with the one in your LawinServer folder. [(Direct download link)](https://github.com/PRO100KatYT/LawinServerAddon/archive/refs/heads/main.zip)
 
+## Stuff Done (C# Port):
+- Full port of the Node/Express LawinServer backend to C# ASP.NET Core (net8.0, minimal APIs + System.Text.Json.Nodes)
+- All HTTP routes, profile/MCP logic, and XMPP & matchmaker WebSockets (port 80)
+- Static serving of `public/`; HTTP on 3551 (or `PORT` env var)
+- In-memory caches (`ProfileStore` for profiles, `DataStore` for responses/catalog)
+- Single MCP dispatcher route + dedicated server route with action switch and generic fallback
+- `McpCommon.Finish` / `McpCommon.FullUpdate` (DeepClone fix) for correct profile revisions
+- Battle pass purchase fixed (XP/friend boosts, `book_purchased`/`book_level` stat changes, persistence of SeasonData)
+- Timeline endpoint (`GET /fortnite/api/calendar/v1/timeline`) for seasons 3-42 with events, states, and state template
+- Locker, quest, refund, loadout, collection, upgrade, inventory, expedition, modular loadout, winterfest handlers ported
+- Performance: skip redundant profile saves, compact JSON I/O, async fire-and-forget disk writes, increased MCP concurrency (1 -> 8)
+- Removed all comments from the backend for a leaner codebase
+- Clean build (0 warnings / 0 errors) verified
+
 ## How to host/use LawinServer
 1) Install [NodeJS](https://nodejs.org/en/)
 2) Run "install_packages.bat" (This file isn't required after the packages are installed.)
@@ -104,4 +118,5 @@ class Handlers
 }
 ```
 
-</details>
+</details>  
+"
