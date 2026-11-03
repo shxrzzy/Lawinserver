@@ -82,8 +82,6 @@
 - Static serving of `public/`; HTTP on 3551 (or `PORT` env var)
 - In-memory caches (`ProfileStore` for profiles, `DataStore` for responses/catalog)
 - Single MCP dispatcher route + dedicated server route with action switch and generic fallback
-- `McpCommon.Finish` / `McpCommon.FullUpdate` (DeepClone fix) for correct profile revisions
-- Battle pass purchase fixed (XP/friend boosts, `book_purchased`/`book_level` stat changes, persistence of SeasonData)
 - Timeline endpoint (`GET /fortnite/api/calendar/v1/timeline`) for seasons 3-42 with events, states, and state template
 - Locker, quest, refund, loadout, collection, upgrade, inventory, expedition, modular loadout, winterfest handlers ported
 - Performance: skip redundant profile saves, compact JSON I/O, async fire-and-forget disk writes, increased MCP concurrency (1 -> 8)
