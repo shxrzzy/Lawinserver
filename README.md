@@ -87,7 +87,6 @@
 - Timeline endpoint (`GET /fortnite/api/calendar/v1/timeline`) for seasons 3-42 with events, states, and state template
 - Locker, quest, refund, loadout, collection, upgrade, inventory, expedition, modular loadout, winterfest handlers ported
 - Performance: skip redundant profile saves, compact JSON I/O, async fire-and-forget disk writes, increased MCP concurrency (1 -> 8)
-- Removed all comments from the backend for a leaner codebase
 - Clean build (0 warnings / 0 errors) verified
 
 ## How to host/use LawinServer
